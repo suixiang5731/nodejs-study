@@ -1,0 +1,23 @@
+{
+  "name": "nodetool",
+  "version": "1.0.0",
+  "description": "08node工程化工具案例",
+  "main": "tool.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test1": "node index.js"
+  },
+  "bin": {
+    "node-cli": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^9.2.19",
+    "ora": "^8.0.1"
+  }
+}

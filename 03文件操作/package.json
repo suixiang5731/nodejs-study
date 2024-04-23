@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "compressing": "^1.10.0",
+    "fs-extra": "^11.2.0"
+  }
+}

@@ -86,6 +86,7 @@ import ora from "ora" // 美化的包，添加一个下种的loading效果
         const spiner = ora("下载中").start()  // 开始转
         // 拉取git仓库， 仓库名规则：'github:'+用户名+'/'+项目名
         // process.cwd() 获取执行当前命令的路径
+        // 这里正常开发时替换为自己的项目专用的模板
         downGit('github:' + _target,
             _outputDir, {clone: false},
             function (err) {
@@ -110,7 +111,7 @@ const program = new Command()
 program.option("-a <num>", "描述：-a num 必填", (num) => {
     console.log("u use -a and input "+ num)
 })
-program.version('1.01.1') // 调用 program.version() 设置 -v 版本，也可以自己写
+program.version('1.01.1') // 调用  program.version() 设置 -v 版本，也可以自己写
 // 不带 '-' 的指令使用 program.command() 定义
 program.command("init <name>").action(name => {
     console.log(name)
