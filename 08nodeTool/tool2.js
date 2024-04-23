@@ -15,3 +15,8 @@ routeArr.forEach(item => {
         cp.copy(item.component) // 自动把内容复制到粘贴板
     }
 })
+
+// 根据 数据 生成 表格 excel 小工具
+
+// 一些可以开发小工具的方面
+// 1，重复操作 2，复杂的数据筛选查找 3，命令行操作
