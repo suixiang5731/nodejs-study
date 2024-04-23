@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node</title>
+    <link href="/test.css" rel="stylesheet" type="text/css"/>
+    <script src="/axios.js"></script>
+</head>
+<body>
+<div class="class1">
+    <label for="username">用户名：</label><input type="text" id="username"/>
+    <label for="password">密码：</label><input type="password" id="password"/>
+    <button id="login">登录</button>
+
+    <div>
+        <%= word %>
+    </div>
+</div>
+<script>
+    // const axios = require('axios');
+    let btn = document.getElementById('login')
+    let userInput = document.getElementById('username')
+    let passwordInput = document.getElementById('password')
+
+    function toLogin() {
+        axios.post('http://localhost:4000/login', {
+            username: userInput.value,
+            password: passwordInput.value,
+        }).then(res => {
+            if (res.data?.message === '登录成功') {
+                let date = new Date()
+                date.setTime(date.getTime() + 0.5 * 24 * 60 * 60 * 1000)
+                document.cookie = `username=${userInput.value};expires=${date.toUTCString()};`
+                window.location = 'http://localhost:3000/'
+            } else {
+                alert(res.data?.message)
+            }
+        })
+    }
+
+    btn.onclick = toLogin
+</script>
+</body>
+</html>

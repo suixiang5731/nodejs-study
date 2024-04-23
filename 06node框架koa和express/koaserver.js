@@ -20,7 +20,7 @@ router.post("/api2", (ctx,next) => {
 app.use(koaBody({
     json: true, // 默认为 true 可不用配置
     urlencoded: true, // 默认为 true 可不用配置
-    multer: true,  // 文件上传使用，需要手动打开
+    multipart: true,  // 文件上传使用，需要手动打开
 }))
 
 // app.use(async () => {}) // koa 可以使用异步回调
