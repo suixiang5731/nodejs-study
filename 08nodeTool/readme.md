@@ -1,5 +1,7 @@
 08node工程化工具案例
 
+正常的npm包开发完毕需要发布到npm仓库，本地开发调试时，可以使用npm link关联本地包，使其可以作为全局包使用，使用 npm unlink xxx 取消关联
+
 [index.js](index.js)
     --开发一个代码模板的示例
 [tool.js](tool.js)
