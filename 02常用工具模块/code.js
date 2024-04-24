@@ -16,7 +16,7 @@ let formatDemo = path.format(path.parse(demo2))
 /*
 // 使用 __dirname 配合 path.resolve(__dirname, demo)，会得到一个绝对路径
 console.log("resolve>>>", `"${path.resolve(__dirname, "./a.js")}"`)
-// __dirname -- 全局变量，表示绝对路径
+// __dirname -- nodejs中的全局变量，表示绝对路径
 console.log("__dirname>>>", `"${__dirname}"`)
 // '../' 表示上一级目录
 console.log("上一级目录>>>", `"${path.resolve('../', "./a.js")}"`)
@@ -61,9 +61,11 @@ process.on("exit", _ => {
     console.log("数完了")
 })*/
 /**
- * 在Node.js中，当主模块的执行完成时，Node.js 进程会自动退出，而 `setTimeout` 中的回调函数并不会阻止进程退出。因此，即使 `setTimeout` 设置了一秒后执行，但是当主模块执行完成后，Node.js 进程就会退出，导致定时器无法继续执行。
+ * 在Node.js中，当主模块的执行完成时，Node.js 进程会自动退出，而 `setTimeout` 中的回调函数并不会阻止进程退出。因此，
+ * 即使 `setTimeout` 设置了一秒后执行，但是当主模块执行完成后，Node.js 进程就会退出，导致定时器无法继续执行。
  *
- * 解决这个问题的一种方法是在主模块中保持一个活动状态，可以通过监听某些事件或者使用类似 `setInterval` 的函数来实现。下面是一个示例：
+ * 解决这个问题的一种方法是在主模块中保持一个活动状态，可以通过监听某些事件或者使用类似 `setInterval` 的函数来实现。
+ * 下面是一个示例：
  *
  * ```javascript
  * let num = 0;

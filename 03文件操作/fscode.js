@@ -32,7 +32,7 @@ console.log(readFileSyncRes.toString())
 /*fs.watch("./test.txt", (err,filename) => {
     console.log(filename)
 })*/
-// 打开 open 用的不多，了解即可
+// 打开 open 用的不多，了解即可 "r" -- 读取； "w" -- 写入
 fs.open("./test.txt","r", (err,fd) => {
     let bf = new Buffer(3)
     fs.read(fd,bf,0,3,2, (err,res) => {
