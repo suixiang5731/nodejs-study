@@ -3,7 +3,7 @@ const request = require('request')
 module.exports = async function (ctx, next) {
     const _id = ctx.request.params.id
     const res = await new Promise((resolve,reject) => {
-        // 此处使用query传过去
+        // 此处使用query形式传过去 ?id=${_id}
         request.get(`http://localhost:4000/detail?id=${_id}`, (err,res,body) => {
             resolve(body)
         })
