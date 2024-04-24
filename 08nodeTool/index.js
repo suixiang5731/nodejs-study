@@ -8,7 +8,7 @@
  * 1. commander 用于添加指令 比如 --help ， -v 等
  * 2. inquirer 用于用户交互，它的核心本质就是使用了 stdin 和 stdout
  */
-// node 14之后已经支持 esmodule 14之前的版本只支持 commonjs
+// node 14之后已经支持 esmodule 14之前的版本只支持 commonjs，如果要使用 esmodule的话，需要在 package.json中设置  "type": "module",
 import inquirer from "inquirer";
 import downGit from "download-git-repo"
 import fs from "fs"
