@@ -3,7 +3,6 @@ const views = require('koa-views')
 const cors = require('koa-cors')
 const koarouter = require('koa-router')
 const {koaBody} = require('koa-body')
-const {route} = require('./router')
 const router = new koarouter()
 const app = new Koa()
 let arr = [
