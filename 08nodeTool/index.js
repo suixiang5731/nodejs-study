@@ -67,8 +67,7 @@ import ora from "ora" // 美化的包，添加一个下种的loading效果
     },
 ])
     .then(res => {
-        // console.log({res})
-        // console.log({res}) 打印结果 如下
+        // console.log({res}) // 打印结果 如下
         // res: {
         //   projectName: 'aaa',
         //   projectType: 'vue',
@@ -84,12 +83,14 @@ import ora from "ora" // 美化的包，添加一个下种的loading效果
         }
         fs.mkdirSync(_outputDir) // 先创建拉取下来仓库的存放文件夹
         const spiner = ora("下载中").start()  // 开始转
+        // 使用 download-git-repo 拉取模板
         // 拉取git仓库， 仓库名规则：'github:'+用户名+'/'+项目名
         // process.cwd() 获取执行当前命令的路径
         // 这里正常开发时替换为自己的项目专用的模板
-        downGit('github:' + _target,
-            _outputDir, {clone: false},
-            function (err) {
+        downGit('github:' + _target, // git仓库名
+            _outputDir, // 模板下载目录
+            {clone: false}, // git拉取配置，这种规则下不使用 git clone
+            function (err) { // 回调函数，在这里处理拉取完成或者失败之后的逻辑
                 if (err) throw err
                 spiner.stop(); // 停止
                 console.log(chalk.green("下载成功"))
