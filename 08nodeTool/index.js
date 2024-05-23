@@ -112,7 +112,7 @@ const program = new Command()
 program.option("-a <num>", "描述：-a num 必填", (num) => {
     console.log("u use -a and input "+ num)
 })
-program.version('1.01.1') // 调用  program.version() 设置 -v 版本，也可以自己写
+program.version('1.01.1') // 调用  program.version() 设置 -V 版本，也可以自己写
 // 不带 '-' 的指令使用 program.command() 定义
 program.command("init <name>").action(name => {
     console.log(name)

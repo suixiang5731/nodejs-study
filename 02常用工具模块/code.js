@@ -26,7 +26,7 @@ console.log("直接拼接>>>", `"${path.join('b', "./a.js")}"`)
 /**
  * process 相关
  */
-// 命令行执行命令 -- node code.js -a -c ，查看下面两个变量输出内容
+// 命令行执行命令 -- node --harmony code.js -a -c --version ，查看下面两个变量输出内容
 // console.log(process.argv)
 // console.log(process.execArgv)
 
