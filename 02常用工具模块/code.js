@@ -33,7 +33,8 @@ console.log("直接拼接>>>", `"${path.join('b', "./a.js")}"`)
 
 // console.log(process.env)
 // NODE_ENV作为一个约定俗成的东西，在项目中存储设置一些变量
-// console.log(process.env.NODE_ENV = "production")
+// console.log(process.env.NODE_ENV = "production") // 赋值 给 NODE_ENV
+// console.log(process.env)
 // console.log(process.env.NODE_ENV)
 
 /**
@@ -114,11 +115,12 @@ cbF1(function (err, num){
 */
 
 // 原始写法
-fs.readFile("./test.txt",(err, res) => {
+/*fs.readFile("./test.txt",(err, res) => {
     console.log(res.toString())
-})
+})*/
 // 转 promise 再使用 -- 推荐
+/*
 const promiseReadFile = util.promisify(fs.readFile)
 promiseReadFile("./test.txt").then(res => {
     console.log(res.toString())
-})
+})*/

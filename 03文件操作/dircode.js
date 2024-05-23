@@ -5,11 +5,12 @@ const dir = fs.readdirSync("./testDir") // 读取文件夹，只能读取里面�
 // fs.rmdirSync("./testdirson-n") // 删除文件夹，只能删除空目录
 
 
-// exists stat
-const state = fs.statSync('./testDir')
-/*console.log(state);
-console.log(state.isDirectory()); // 检测是否是一个目录 -- true
-console.log(state.isFile()); // 检测是否是一个文件 -- false*/
+// exists -- 判断是否存在 ；stat -- 获取文件状态信息
+const isExists = fs.existsSync('./testDir')
+const stat = fs.statSync('./testDir')
+/*console.log(stat);
+console.log(stat.isDirectory()); // 检测是否是一个目录 -- true
+console.log(stat.isFile()); // 检测是否是一个文件 -- false*/
 
 /**
  * 实际上不会自己手写清空或者拷贝文件夹，一般都是使用现成的库
