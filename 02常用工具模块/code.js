@@ -42,6 +42,10 @@ console.log("直接拼接>>>", `"${path.join('b', "./a.js")}"`)
  * 执行命令： node ./02常用工具模块/code.js 得到结果
  * S:\Develop\Projects\nodejs-study S:\Develop\Projects\nodejs-study\02常用工具模块
  * 由此可看出process.cwd() 和 __dirname 的区别
+ * 1. process.cwd() 用于获取当前进程的工作目录，它是全局变量，
+ * 每个进程都有自己的工作目录。
+ * 2. __dirname 用于获取当前模块的文件目录，它是全局变量，
+ * 在整个应用程序中都是可见的。
  */
 // console.log(process.cwd(), __dirname)
 /*process.stdout.write("请输入一个数字")
